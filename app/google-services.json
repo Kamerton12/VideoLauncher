@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "431845211449",
+    "firebase_url": "https://video-launcher1.firebaseio.com",
+    "project_id": "video-launcher1",
+    "storage_bucket": "video-launcher1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:431845211449:android:f5f4361eca32b836483ce8",
+        "android_client_info": {
+          "package_name": "com.maxdroz.videolauncher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "431845211449-1vs7cv4is09auhqh3ia22fu4tp7ee074.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.maxdroz.videolauncher",
+            "certificate_hash": "c468ba7d57aaa9040d47df410c2ef50931462cbc"
+          }
+        },
+        {
+          "client_id": "431845211449-345c58cakfv9kko0506u5fsdcihh45vf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.maxdroz.videolauncher",
+            "certificate_hash": "d5e025a54ca9b64c45d7dc4a5826767e37b6899d"
+          }
+        },
+        {
+          "client_id": "431845211449-e7e6dlsqgjrr4ahd0u70uuq50q2kj0uf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDb4LGFI_rp7xkOLZtyN6Oq7EcA4jNJJQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "431845211449-e7e6dlsqgjrr4ahd0u70uuq50q2kj0uf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

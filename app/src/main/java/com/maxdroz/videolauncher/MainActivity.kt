@@ -1,9 +1,12 @@
 package com.maxdroz.videolauncher
 
 import android.app.Activity
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.iid.FirebaseInstanceId
+import com.maxdroz.videolauncher.firebase.BackendTokenUpdater
 
 
 /**
@@ -11,16 +14,23 @@ import android.os.Bundle
  */
 class MainActivity : Activity() {
 
+    private val TAG = "test tag"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val intent = Intent(Intent.ACTION_VIEW)
-        val videoUri = Uri.parse("https://load.hdrezka-ag.net//movies/d3c24acb395af16111ad3551e3aba52215517e7f/94069293c62d723387ff0b893d120cca:2020062501/720.mp4:hls:manifest.m3u8")
-        intent.setDataAndType(videoUri, "application/x-mpegURL")
-        intent.setPackage("com.mxtech.videoplayer.pro")
-        startActivity(intent)
+        FirebaseInstanceId.getInstance().instanceId
+            .addOnCompleteListener(OnCompleteListener { task ->
+                if (!task.isSuccessful) {
+                    Log.w(TAG, "getInstanceId failed", task.exception)
+                    return@OnCompleteListener
+                }
 
-        finish()
+                val token = task.result?.token ?: return@OnCompleteListener
+
+                Log.d(TAG, token)
+                BackendTokenUpdater.updateTokenSync(token)
+            })
     }
 }
